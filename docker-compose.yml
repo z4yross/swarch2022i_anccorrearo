@@ -26,3 +26,11 @@ services:
       - URL=0.0.0.0:4000
     depends_on:
       - swarch2022i_db
+  swarch2022i_ag:
+    build: ./swarch2022i_ag/
+    ports:
+      - "5000:5000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - swarch2022i_ms
